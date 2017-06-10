@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Hello from './App';
+import Marvel from './App';
 
 ReactDOM.render(
-    <Hello />, document.getElementById('root')
+    <Marvel />, document.getElementById('root')
 )

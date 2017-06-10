@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-import Topo from './Topo';
-import Rodape from './Rodape';
-import Taskboard from './Taskboard';
+import Header from './Header';
+import Footer from './Footer';
+import Avengers from './Avengers';
 
-class Hello extends Component {
+class Marvel extends Component {
     render() {
         return (<div>
-            <Topo />
-            <Taskboard />
-            <Rodape />
+            <Header />
+            <Avengers />
+            <Footer />
         </div>);
     }
 }
 
-export default Hello;
+export default Marvel;
