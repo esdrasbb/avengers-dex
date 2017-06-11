@@ -16,16 +16,17 @@ class Avengers extends Component {
     render() {
         const characters = this._getCharacters();
         const charactersTotal = this._getTitle(characters.length);
-        return (<div>  <div className="section no-pad-bot" id="index-banner">
-            <div className="container">
-                <h1 className="header center orange-text">Characters</h1>
-                <h3>{charactersTotal}</h3>
-                <div className="row">
-                    {characters}
+        return (<div>
+                <div className="container clearfix">
+                    <h1>Characters</h1>
+                    <h3>{charactersTotal}</h3>
+                    <div className="row">
+                        {characters}
+                    </div>
                 </div>
+            <div>
                 <CharacterForm addCharacter={this._addCharacter.bind(this)} />
             </div>
-        </div>
         </div>
         )
     }

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
   render() {
-    return (<div>  <footer className="page-footer orange">
-      <div className="footer-copyright">
-        <div className="container">
-          <a className="orange-text text-lighten-3" href="https://developer.marvel.com/">©2017 MARVEL</a>
+    return (<div>  <footer>
+      <div className="mongoose-card-4">
+        <div className="mongoose-theme-d1">
+          <h4><a className="mongoose-theme-d1" href="https://developer.marvel.com/">©2017 MARVEL</a></h4>
         </div>
       </div>
     </footer>

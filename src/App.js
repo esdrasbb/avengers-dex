@@ -6,7 +6,7 @@ import Avengers from './Avengers';
 
 class Marvel extends Component {
     render() {
-        return (<div>
+        return (<div className="container">
             <Header />
             <Avengers />
             <Footer />

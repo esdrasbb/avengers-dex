@@ -7,16 +7,19 @@ class CharacterForm extends Component {
         const options = this._getOptions(images);
 
         return (<div className="row">
-            <form className="col s12" onSubmit={this._handleSubmit.bind(this)}>
-                <h5>Add Character</h5>
+            <form onSubmit={this._handleSubmit.bind(this)}>
+                <h4>Add Character</h4>
                 <div className="input-field col s12">
-                    <input placeholder="Name" ref={input => this._name = input} /><br />
-                    <select className="browser-default" ref={select => this._thumbnail = select} >
+                    <label htmlFor="fname">First Name</label><br />
+                    <input type="text" placeholder="Name of your character..." id="fname" ref={input => this._name = input} /><br />
+                    <label htmlFor="thumbnail">Thumbnail</label><br />
+                    <select className="browser-default" id="thumbnail" ref={select => this._thumbnail = select} >
                         {options}
                     </select><br />
-                    <textarea placeholder="Description" className="materialize-textarea"
+                    <label htmlFor="description">Description</label><br />
+                    <textarea placeholder="Details about your character..." id="description" className="materialize-textarea"
                         ref={textarea => this._description = textarea}></textarea><br />
-                    <button className="btn waves-effect waves-light" type="submit">Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
             </form>
         </div>
@@ -25,6 +28,12 @@ class CharacterForm extends Component {
 
     _handleSubmit(event) {
         event.preventDefault();
+
+        if (!this._name.value){
+            window.alert('What is the name?')
+            return false;
+        }
+
         let name = this._name.value;
         let description = this._description.value;
         let thumbnail = this._thumbnail.value;
@@ -32,7 +41,7 @@ class CharacterForm extends Component {
         this.props.addCharacter(name, description, thumbnail);
         this._name.value = '';
         this._description.value = '';
-        this._thumbnail.value = '';
+        this._thumbnail.value = 'images/iron-man.jpg';
     }
 
     _getImages() {
@@ -53,8 +62,7 @@ class CharacterForm extends Component {
             { "id": 14, "name": "Crossbones", "url": "images/crossbones.jpg" },
             { "id": 15, "name": "Gamora", "url": "images/gamora.jpg" },
             { "id": 16, "name": "Drax", "url": "images/drax.jpg" },
-            { "id": 17, "name": "Groot", "url": "images/groot.jpg" },
-            { "id": 18, "name": "Suricate", "url": "images/suricate.jpg" }
+            { "id": 17, "name": "Groot", "url": "images/groot.jpg" }
         ];
     }
 

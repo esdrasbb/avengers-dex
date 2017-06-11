@@ -18,7 +18,7 @@ class Character extends Component {
 
   _handleDelete(event) {
     event.preventDefault();
-    if (confirm('Delete Character?')){
+    if (confirm('Delete Character?')) {
       this.props.onDelete(this.props.id);
     }
   }
@@ -32,26 +32,26 @@ class Character extends Component {
       labelButton = "Hide Details";
     }
 
-    return (<div>      
-        <div className="col-xs col-sm-1 col-md-1">
-          <div className="card indigo darken-3">
-            <img className="responsive-img" src={this.props.thumbnail} alt={this.props.name} />
-            <div className="card-content white-text">
-              <span className="card-title">{this.props.name}</span>
-              {description}
-            </div>
-            <div className="card-action">
-              <a className="right" href="#"
-                onClick={this._handleClick.bind(this)}>{labelButton}</a>
-              <a className="right" href="#"
-                onClick={this._handleDelete.bind(this)}>Delete</a>
-              <br />
-            </div>
-
-
+    return (<div>
+      <div className="col-xs col-sm-2 col-md-2">
+        <div className="card z-depth-5 clearfix">
+          <div className="card-image">
+            <img src={this.props.thumbnail} alt={this.props.name} />
+          </div>
+          <div className="card-content">
+            <span className="card-title">{this.props.name}</span>
+            {description}
+          </div>
+          <div className="card-action">
+            <a className="left" href="#"
+              onClick={this._handleClick.bind(this)}>{labelButton}</a>
+            <a className="right" href="#"
+              onClick={this._handleDelete.bind(this)}>Delete</a>
+            <br />
           </div>
         </div>
       </div>
+    </div>
     )
   }
 }
